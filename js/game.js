@@ -115,7 +115,7 @@ class Game{
                      
                  }
                  if(frameCount % 40 === 0){
-                    //chame addObstacles()
+                    this.addObstacles()
                  }
                  
                   if (player.index !== null) {
@@ -127,24 +127,12 @@ class Game{
                               
 
                           }
-                  
-                          
                       }
-
                       if(obstacleGroup.isTouching(players)){
-                       //escreva o código para atribuir o valor de gameState a End (fim)
+                        gameState = 2
                       }
                   }
                 }
-            
-                
-
-         
-         
-        
-         
-
-    
                 showRank() {
                     alert("Incrível !! Você terminou o jogo! Sua classificação é :" +player.rank)
                   }
@@ -165,9 +153,7 @@ class Game{
     addObstacles()
     {       
             var x, y;
-            //escreva o código para criar um obstáculo na posição x aleatória.
-            
-            
+            x = Math.round(random(0,width-100))
             y = 0
             var obstacle = createSprite(x, y);
             obstacle.addImage("obstacle", obstacleImage);
